@@ -1,181 +1,191 @@
-/* Reset */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-  font-family: "MonumentExtended-Regular", monospace;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles - Contrasting Vibrancy Theme */
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        font-size: 100%;
+    }
+
+    /* Light Mode (when .light class is applied) */
+    body {
+        @apply bg-dark text-light transition-colors duration-300;
+        font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+        font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+        line-height: 1.6;
+        letter-spacing: -0.01em;
+    }
+
+    /* Dark Mode (default) */
+    .dark body {
+        @apply bg-dark text-light;
+    }
+
+    /* Light Mode */
+    .light body {
+        @apply bg-light text-dark;
+    }
+
+    /* Fluid Typography Scale */
+    h1 {
+        font-size: clamp(1.875rem, 1.5rem + 1.5vw, 2.5rem);
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+        font-weight: 600;
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+        font-weight: 600;
+    }
+
+    h3 {
+        font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+        line-height: 1.3;
+        letter-spacing: -0.015em;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);
+        line-height: 1.7;
+    }
+
+    /* Monospace text */
+    code, .font-mono {
+        font-family: "Geist Mono", ui-monospace, monospace;
+        font-size: 0.875em;
+        letter-spacing: -0.02em;
+    }
+
+    /* Selection colors - Dark mode (yellow) */
+    .dark ::selection {
+        @apply bg-accent-yellow text-dark;
+    }
+    .dark ::-moz-selection {
+        @apply bg-accent-yellow text-dark;
+    }
+
+    /* Selection colors - Light mode (blue) */
+    .light ::selection {
+        @apply bg-accent-blue text-light;
+    }
+    .light ::-moz-selection {
+        @apply bg-accent-blue text-light;
+    }
+
+    /* Better text rendering for high DPI displays */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        body {
+            -webkit-font-smoothing: subpixel-antialiased;
+        }
+    }
+
+    /* Larger screens (4K, etc.) */
+    @media (min-width: 1920px) {
+        html {
+            font-size: 112.5%;
+        }
+    }
+
+    @media (min-width: 2560px) {
+        html {
+            font-size: 125%;
+        }
+    }
 }
 
-:root {
-  --primary-color: #f1eeee;
-  --secondary-color: #212529;
-  --dark-blue: #3d4664;
-  --orange: #fe7622;
+/* Theme-aware utilities */
+@layer utilities {
+    /* Text colors */
+    .text-primary {
+        @apply text-dark;
+    }
+    .dark .text-primary {
+        @apply text-light;
+    }
+
+    .text-secondary {
+        @apply text-dark/70;
+    }
+    .dark .text-secondary {
+        @apply text-light/70;
+    }
+
+    .text-muted {
+        @apply text-dark/50;
+    }
+    .dark .text-muted {
+        @apply text-light/50;
+    }
+
+    .text-subtle {
+        @apply text-dark/40;
+    }
+    .dark .text-subtle {
+        @apply text-light/40;
+    }
+
+    /* Accent colors - blue (light) / yellow (dark) */
+    .text-accent {
+        @apply text-accent-blue;
+    }
+    .dark .text-accent {
+        @apply text-accent-yellow;
+    }
+
+    .hover-accent:hover {
+        @apply text-accent-blue;
+    }
+    .dark .hover-accent:hover {
+        @apply text-accent-yellow;
+    }
+
+    /* Background */
+    .bg-base {
+        @apply bg-light;
+    }
+    .dark .bg-base {
+        @apply bg-dark;
+    }
+
+    .bg-surface {
+        @apply bg-dark/5;
+    }
+    .dark .bg-surface {
+        @apply bg-light/5;
+    }
 }
 
-/* For a while */
-.main-page {
-  width: 100%;
-  height: 100vh;
-  background-color: var(--primary-color);
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* Theme-aware components */
+@layer components {
+    /* Link styles - blue (light) / yellow (dark) */
+    .link-accent {
+        @apply text-accent-blue underline underline-offset-4 decoration-accent-blue/30 hover:decoration-accent-blue transition-all duration-200;
+    }
+    .dark .link-accent {
+        @apply text-accent-yellow decoration-accent-yellow/30 hover:decoration-accent-yellow;
+    }
 
-.main-page::after {
-  content: "";
-  width: 50vw;
-  height: 50vw;
-  position: absolute;
-  background-image: url("../../public/assets/images/_.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  bottom: -20vw;
-  right: -20vw;
-}
+    /* Theme toggle button */
+    .theme-toggle {
+        @apply relative w-14 h-7 rounded-full cursor-pointer bg-dark/10 transition-colors duration-300;
+    }
+    .dark .theme-toggle {
+        @apply bg-light/10;
+    }
 
-@media only screen and (max-width: 600px) {
-	.main-page::after {
-		width: 80vw;
-		height: 80vw;
-	}
-}
-
-.main-page pre {
-  color: var(--dark-blue);
-  font-size: 6vw;
-  text-transform: capitalize;
-  z-index: 1;
-}
-
-.main-page .stroke-text {
-  color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--dark-blue);
-}
-
-.main-page .text--dark-blue {
-	color: var(--dark-blue);
+    .theme-toggle-knob {
+        @apply absolute top-1 left-1 w-5 h-5 rounded-full bg-accent-blue transition-all duration-300;
+    }
+    .dark .theme-toggle-knob {
+        @apply left-8 bg-accent-yellow;
+    }
 }

@@ -1,30 +1,105 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# iqbalfasri.dev
 
-## Getting Started
+Personal website built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
 
-First, run the development server:
+Elegant minimalist design with earthy natural colors and asymmetric layouts inspired by modern web design.
+
+## 🚀 Getting Started
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:4321](http://localhost:4321) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-## Learn More
+- **[Astro](https://astro.build/)** - Static Site Generator (v5.1.5)
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework (v3.4.18)
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript (v5.7.3)
 
-To learn more about Next.js, take a look at the following resources:
+## 🎨 Design Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Elegant Minimalism**: Clean, refined design with generous whitespace
+- **Earthy Color Palette**: Natural sage green, moss, olive, and cream tones for a calm, organic feel
+- **Asymmetric Layouts**: Dynamic 7-5 column grid that breaks traditional patterns
+- **Glassmorphism**: Frosted glass card effects with subtle backdrop blur
+- **Smooth Animations**: CSS-only floating and fade effects
+- **Responsive**: Mobile-first design that scales beautifully across all devices
+- **Custom Fonts**: Crimson Pro (serif) for headings, DM Sans for body, Outfit for display
+- **Light & Natural**: Optimized for clarity and approachability with earthy tones
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 📁 Project Structure
 
-## Deploy on Vercel
+```
+/
+├── public/
+│   ├── assets/
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   └── HomeContainer.astro
+│   ├── layouts/
+│   │   └── BaseLayout.astro
+│   ├── pages/
+│   │   ├── index.astro
+│   │   └── about.astro
+│   └── styles/
+│       └── globals.css
+├── astro.config.mjs
+├── tailwind.config.js
+└── package.json
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧞 Commands
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+
+## 📝 Project History
+
+### Design System (2025)
+Complete redesign with elegant earthy aesthetic:
+- Light gradient backgrounds with natural earthy colors (#F6F0D7, #C5D89D, #9CAB84, #89986D)
+- Asymmetric layout system (7-5 column grid)
+- Glassmorphism card effects with soft shadows
+- CSS animations (float, fade, slide)
+- Elegant typography pairing (Crimson Pro + DM Sans)
+- Enhanced user experience with gentle hover effects
+- Mobile-optimized responsive design
+
+### Migration (Next.js → Astro)
+Migrated from Next.js to Astro while maintaining:
+- All page content and functionality
+- Google Analytics integration
+- Responsive design
+- Performance optimizations
+
+For detailed design documentation, see [DESIGN.md](DESIGN.md)
+For migration details, see [MIGRATION.md](MIGRATION.md)
+
+## 🚀 Deploy
+
+The site can be deployed to any static hosting platform:
+
+- [Vercel](https://vercel.com/)
+- [Netlify](https://www.netlify.com/)
+- [Cloudflare Pages](https://pages.cloudflare.com/)
+- [GitHub Pages](https://pages.github.com/)
+
+## 📄 License
+
+This project is personal property of Iqbal Fasri.

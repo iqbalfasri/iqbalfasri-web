@@ -1,0 +1,59 @@
+---
+import "../styles/globals.css";
+import { SITE_CONFIG, GA_TRACKING_ID } from "../lib/constants";
+
+interface Props {
+    title?: string;
+}
+
+const { title = SITE_CONFIG.title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <title>{title}</title>
+
+        <!-- Theme initialization (prevent flash) -->
+        <script is:inline>
+            const theme = localStorage.getItem("theme") || "dark";
+            document.documentElement.classList.remove("light", "dark");
+            document.documentElement.classList.add(theme);
+        </script>
+
+        <!-- Google Analytics -->
+        <script
+            is:inline
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        ></script>
+        <script is:inline define:vars={{ GA_TRACKING_ID }}>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", GA_TRACKING_ID, {
+                page_path: window.location.pathname,
+            });
+        </script>
+
+        <!-- Fonts: Plus Jakarta Sans + Geist Mono -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-mono/style.min.css"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
