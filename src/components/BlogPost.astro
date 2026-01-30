@@ -1,0 +1,58 @@
+---
+import type { Post } from "../lib/posts";
+
+interface Props {
+  post: Post;
+  htmlContent: string;
+}
+
+const { post, htmlContent } = Astro.props;
+---
+
+<article class="space-y-10 sm:space-y-14 animate-fade-in">
+  <header class="space-y-6">
+    <a
+      href="/blog"
+      class="group inline-flex items-center gap-2 text-muted hover:text-accent transition-all duration-300"
+    >
+      <span class="flex items-center justify-center w-6 h-6 rounded-full border border-current opacity-60 group-hover:opacity-100 transition-opacity">
+        <svg
+          class="w-3 h-3"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </span>
+      <span class="text-xs font-mono uppercase tracking-widest">Back</span>
+    </a>
+
+    <div>
+      <h1 class="text-primary text-3xl sm:text-4xl font-bold tracking-tight">{post.title}</h1>
+
+      <p class="text-muted font-mono text-xs uppercase tracking-widest mt-3">
+        <time datetime={post.date}>
+          {new Date(post.date).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
+        </time>
+        {post.tags && post.tags.length > 0 && (
+          <>
+            <span class="mx-2">·</span>
+            <span>{post.tags.join(", ")}</span>
+          </>
+        )}
+      </p>
+    </div>
+  </header>
+
+  <div class="prose-blog text-secondary" set:html={htmlContent} />
+</article>

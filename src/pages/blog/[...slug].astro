@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getAllPostSlugs, getPostBySlug } from '../../lib/posts';
+import BlogPost from '../../components/BlogPost.astro';
+import { marked } from 'marked';
+
+export async function getStaticPaths() {
+  const slugs = getAllPostSlugs();
+  return slugs.map(slug => ({
+    params: { slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const post = getPostBySlug(slug as string);
+
+// Configure marked for rendering
+marked.setOptions({
+  gfm: true,
+  breaks: true,
+});
+
+const htmlContent = await marked(post.content) as string;
+---
+
+<BaseLayout title={post.title}>
+  <main class="min-h-screen bg-base transition-colors duration-300">
+    <div class="max-w-[65ch] mx-auto px-5 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-28 lg:py-32">
+      <BlogPost post={post} htmlContent={htmlContent} />
+    </div>
+  </main>
+</BaseLayout>

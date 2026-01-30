@@ -188,4 +188,78 @@
     .dark .theme-toggle-knob {
         @apply left-8 bg-accent-yellow;
     }
+
+    /* Blog Prose Styling */
+    .prose-blog {
+        @apply space-y-4;
+    }
+
+    .prose-blog h1 {
+        @apply text-primary mt-8 mb-4;
+    }
+
+    .prose-blog h2 {
+        @apply text-primary mt-6 mb-3;
+    }
+
+    .prose-blog h3 {
+        @apply text-primary mt-5 mb-2;
+    }
+
+    .prose-blog p {
+        @apply text-secondary leading-relaxed;
+    }
+
+    .prose-blog a {
+        @apply link-accent;
+    }
+
+    .prose-blog ul,
+    .prose-blog ol {
+        @apply text-secondary space-y-2 pl-6;
+    }
+
+    .prose-blog li {
+        @apply leading-relaxed;
+    }
+
+    .prose-blog code {
+        @apply font-mono text-sm bg-surface px-2 py-1 rounded;
+    }
+
+    .prose-blog pre {
+        @apply bg-surface p-4 rounded overflow-x-auto;
+    }
+
+    .prose-blog pre code {
+        @apply bg-transparent p-0;
+    }
+
+    .prose-blog blockquote {
+        @apply border-l-4 border-accent-blue pl-4 italic text-secondary;
+    }
+
+    .dark .prose-blog blockquote {
+        @apply border-accent-yellow;
+    }
+
+    .prose-blog img {
+        @apply rounded my-6;
+    }
+
+    /* Animations */
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fade-in 0.5s ease-out;
+    }
 }

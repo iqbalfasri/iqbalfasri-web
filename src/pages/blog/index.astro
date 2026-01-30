@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getAllPosts } from '../../lib/posts';
+import BlogList from '../../components/BlogList.astro';
+
+const posts = getAllPosts();
+const title = 'Blog';
+---
+
+<BaseLayout title={title}>
+  <main class="min-h-screen bg-base transition-colors duration-300">
+    <div class="max-w-[65ch] mx-auto px-5 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-28 lg:py-32">
+      <div class="space-y-10 sm:space-y-14 animate-fade-in">
+        <!-- Header -->
+        <header class="space-y-6">
+          <a
+            href="/"
+            class="group inline-flex items-center gap-2 text-muted hover:text-accent transition-all duration-300"
+          >
+            <span class="flex items-center justify-center w-6 h-6 rounded-full border border-current opacity-60 group-hover:opacity-100 transition-opacity">
+              <svg
+                class="w-3 h-3"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </span>
+            <span class="text-xs font-mono uppercase tracking-widest">Back to home</span>
+          </a>
+
+          <div>
+            <h1 class="text-primary text-3xl sm:text-4xl font-bold tracking-tight">Blog</h1>
+            <p class="text-secondary mt-2">Writing stuff I find interesting.</p>
+          </div>
+        </header>
+
+        <!-- Posts List -->
+        <BlogList posts={posts} />
+      </div>
+    </div>
+  </main>
+</BaseLayout>
