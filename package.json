@@ -10,7 +10,8 @@
     "astro-dev": "astro dev",
     "dev": "bunx tinacms dev -c 'astro dev'",
     "start": "astro dev",
-    "build": "tinacms build && astro check && astro build",
+    "build": "tinacms build && astro build",
+    "check": "astro check",
     "preview": "astro preview",
     "astro": "astro"
   },
