@@ -1,11 +1,8 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getAllPosts } from '../../lib/posts';
-import BlogList from '../../components/BlogList.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import { ChevronLeft } from 'lucide-astro';
 
-const posts = getAllPosts();
-const title = 'Blog';
+const title = 'Projects';
 ---
 
 <BaseLayout title={title}>
@@ -25,13 +22,15 @@ const title = 'Blog';
           </a>
 
           <div>
-            <h1 class="text-primary text-3xl sm:text-4xl font-bold tracking-tight">Blog</h1>
-            <p class="text-secondary mt-2">Writing stuff I find interesting.</p>
+            <h1 class="text-primary text-3xl sm:text-4xl font-bold tracking-tight">Projects</h1>
+            <p class="text-secondary mt-2">Things I've built.</p>
           </div>
         </header>
 
-        <!-- Posts List -->
-        <BlogList posts={posts} />
+        <!-- Projects List -->
+        <div class="space-y-8">
+          <p class="text-muted text-sm font-mono">Coming soon...</p>
+        </div>
       </div>
     </div>
   </main>

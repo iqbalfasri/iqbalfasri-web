@@ -1,5 +1,6 @@
 ---
 import type { Post } from "../lib/posts";
+import { ChevronLeft } from "lucide-astro";
 
 interface Props {
   post: Post;
@@ -16,19 +17,7 @@ const { post, htmlContent } = Astro.props;
       class="group inline-flex items-center gap-2 text-muted hover:text-accent transition-all duration-300"
     >
       <span class="flex items-center justify-center w-6 h-6 rounded-full border border-current opacity-60 group-hover:opacity-100 transition-opacity">
-        <svg
-          class="w-3 h-3"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
+        <ChevronLeft class="w-3 h-3" />
       </span>
       <span class="text-xs font-mono uppercase tracking-widest">Back</span>
     </a>
