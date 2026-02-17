@@ -19,7 +19,6 @@ Namun, ada hal yang sepenuhnya di bawah kendali saya: **Pemahaman saya, integrit
 
 Maka, inilah *reminder* untuk diri saya sendiri:
 
-
 *Fundamental Bukanlah Sampah.*
 
 Justru karena AI semakin pintar, pemahaman fundamental menjadi semakin mahal. AI bisa menulis kode, tapi AI seringkali ceroboh. Ketika bug yang kompleks muncul, atau ketika arsitektur sistem butuh efisiensi tingkat tinggi, AI akan mentok. Di situlah "manusia" masuk. Saya bukan lagi sekadar penulis kode, saya adalah Code Reviewer dan Arsitek bagi AI saya.
