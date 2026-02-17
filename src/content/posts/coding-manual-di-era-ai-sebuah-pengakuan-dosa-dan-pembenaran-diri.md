@@ -17,7 +17,9 @@ Ada hal-hal yang di luar kendali saya: kemajuan AI yang gila-gilaan, banjirnya j
 
 Namun, ada hal yang sepenuhnya di bawah kendali saya: **Pemahaman saya, integritas kode saya, dan kemampuan saya memecahkan masalah.**
 
-Maka, inilah *reminder* untuk diri saya sendiri:
+***
+
+**Maka, inilah *reminder* untuk diri saya sendiri:**
 
 *Fundamental Bukanlah Sampah.*
 
@@ -30,3 +32,13 @@ Saya tidak perlu merasa bersalah coding manual untuk belajar. Anggaplah AI sebag
 *Fokus pada "Value", Bukan Sekadar "Visual".*
 
 Portofolio cantik sudah murah harganya. Tantangan saya sekarang bukan lagi membuat tampilan yang bagus, tapi membangun sistem yang impactful. Membangun aplikasi dengan logika bisnis yang rumit dan menyelesaikan masalah nyata jauh lebih berharga daripada 10 landing page hasil generate. Kesulitan dan "struggle" saat membangun logika itulah yang membedakan engineer sungguhan dengan sekadar prompter.
+
+***
+
+> Jadi, untuk diri saya yang sedang merasa stuck: Jangan takut terlihat lambat.
+
+> Belajar manual itu tidak salah. Memahami "kenapa" dan "bagaimana" kode bekerja itu tidak pernah sia-sia. Di tengah lautan kemudahan instan, kedalaman pemahaman adalah satu-satunya hal yang tidak bisa dipalsukan.
+
+>
+
+> Tetaplah belajar. Tetaplah membangun. Dan biarkan karya yang berbicara, bukan sekadar gaya.
